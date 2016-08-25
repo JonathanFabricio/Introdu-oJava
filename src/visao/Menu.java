@@ -20,14 +20,24 @@ public class Menu {
         System.out.print(" O que você deseja fazer ");
         
         Scanner entrada = new Scanner(System.in);
-        
-        try{
-            int opcao = entrada.nextInt();
-            System.out.println("Opção desejada: "+opcao);
-        }catch(Exception e){
-            System.out.println("Não deu certo!!!"+e.getClass());
+        int opcao = 0;
+        do{
+            try{
+                opcao = Integer.parseInt(entrada.nextLine());
+                System.out.println("Opção desejada: "+opcao);
+            }catch(Exception e){
+                System.out.println("Não deu certo!!!"+e.getClass());
+            }
+        }while(opcao != 1 && opcao!= 2);
+        switch(opcao){
+            case 1:
+                EquipamentoVisao.exibirFormularioCadastroEquipamento();
+                break;
+            case 2:
+                
+                break;
+            default:
+                break;
         }
-        
-        
     }
 }
